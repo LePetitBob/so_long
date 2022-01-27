@@ -6,7 +6,7 @@
 /*   By: vduriez <vduriez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 15:11:26 by vduriez           #+#    #+#             */
-/*   Updated: 2022/01/27 19:05:49 by vduriez          ###   ########.fr       */
+/*   Updated: 2022/01/27 19:56:41 by vduriez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	reading_set(t_gnl *reading, char *map)
 	char	*sample;
 
 	sample = malloc(sizeof(char) * 5);
+	if (!sample)
+		return ;
 	read_ret[1] = open(map, O_RDONLY);
 	read_ret[0] = read(read_ret[1], sample, 4);
 	sample[4] = '\0';
@@ -28,17 +30,11 @@ void	reading_set(t_gnl *reading, char *map)
 		ft_exit("Error\nThe map is invalid\n");
 	}
 	free(sample);
+	reading = (t_gnl){0};
 	reading->line = NULL;
-	reading->collectible = 0;
-	reading->player = 0;
-	reading->exits = 0;
-	reading->height = 0;
-	reading->length = 0;
-	reading->heightmax = 0;
 	reading->rect = 1;
 	reading->walls = 1;
 	reading->requisites = 1;
-	reading->tmp = 0;
 }
 
 void	reading_init(t_gnl *reading, char *map)
