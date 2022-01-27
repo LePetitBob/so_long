@@ -6,7 +6,7 @@
 /*   By: vduriez <vduriez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 15:13:02 by vduriez           #+#    #+#             */
-/*   Updated: 2022/01/27 18:58:53 by vduriez          ###   ########.fr       */
+/*   Updated: 2022/01/27 20:08:31 by vduriez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ typedef struct s_gnl
 	int		player;
 	int		pos[2];
 	int		collectible;
-	int		enemy;
 	int		rect;
 	int		walls;
 	int		requisites;
@@ -86,6 +85,7 @@ int		extension_check(char *ext, char *file);
 int		ft_exit_mlx(t_mlx *disp);
 int		ft_exit_close(t_mlx *disp);
 
+void	reading_init_values(t_gnl *reading);
 void	map_check(char *map_name, t_gnl *reading, t_mlx *disp);
 void	set_map(t_gnl *reading, t_mlx *disp);
 void	map_requisites(t_gnl *reading);

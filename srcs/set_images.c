@@ -6,7 +6,7 @@
 /*   By: vduriez <vduriez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 17:46:33 by vduriez           #+#    #+#             */
-/*   Updated: 2022/01/27 17:04:13 by vduriez          ###   ########.fr       */
+/*   Updated: 2022/01/27 20:11:23 by vduriez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	err_img(char *msg, t_mlx *disp)
 	mlx_destroy_window(disp->mlx, disp->win);
 	mlx_destroy_display(disp->mlx);
 	free(disp->mlx);
+	free_map(disp->map);
 	exit(1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: vduriez <vduriez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 15:11:26 by vduriez           #+#    #+#             */
-/*   Updated: 2022/01/27 19:56:41 by vduriez          ###   ########.fr       */
+/*   Updated: 2022/01/27 20:07:20 by vduriez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,7 @@ void	reading_set(t_gnl *reading, char *map)
 		ft_exit("Error\nThe map is invalid\n");
 	}
 	free(sample);
-	reading = (t_gnl){0};
-	reading->line = NULL;
-	reading->rect = 1;
-	reading->walls = 1;
-	reading->requisites = 1;
+	reading_init_values(reading);
 }
 
 void	reading_init(t_gnl *reading, char *map)
